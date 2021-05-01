@@ -1,5 +1,7 @@
 // require express and your two routes files
 const express= require('express');
+const apiRoutes=require('./routes/apiRoutesTODO');
+const htmlRoutes=require('./routes/htmlRoutesTODO');
 
 // Initialize the app and create a port
 const app = express();
@@ -12,7 +14,12 @@ app.use(express.json());
 
  // serve up the public directory using the static middleware
  // https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"))
+app.use(express.static("public"));
+app.use('/api',apiRoutes);
+app.use('/',htmlRoutes);
+
+
+
 app.listen(PORT,()=>console.log(`listening on PORT: ${PORT}`))
 // using app.use() for both route files pass in two arguments:
 	// the path ('/api' for api routes and '/' for html routes)
