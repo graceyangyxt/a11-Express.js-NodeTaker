@@ -5,7 +5,7 @@ const htmlRoutes=require('./routes/htmlRoutesTODO');
 
 // Initialize the app and create a port
 const app = express();
-var PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT || 3005;
 // Set up body parsing middleware for json and url encoded
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
